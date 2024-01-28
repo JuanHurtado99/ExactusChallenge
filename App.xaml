@@ -1,0 +1,25 @@
+﻿<Application x:Class="ExactusCodeChallenge.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:ExactusCodeChallenge"
+             xmlns:viewModel="clr-namespace:ExactusCodeChallenge.MVVM.ViewModel"
+             xmlns:view="clr-namespace:ExactusCodeChallenge.MVVM.View"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Theme/SideBarButton.xaml"/>
+                <ResourceDictionary Source="Theme/BorderTheme.xaml" />
+                <ResourceDictionary Source="Theme/TextTheme.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <DataTemplate DataType="{x:Type viewModel:HomeViewModel}">
+                <view:HomeView />
+            </DataTemplate>
+            
+            <DataTemplate DataType="{x:Type viewModel:Challenge1ViewModel}">
+                <view:Challenge1View />
+            </DataTemplate>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

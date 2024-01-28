@@ -1,0 +1,72 @@
+﻿<Window x:Class="ExactusCodeChallenge.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ExactusCodeChallenge"
+        xmlns:viewModel="clr-namespace:ExactusCodeChallenge.MVVM.ViewModel"
+        mc:Ignorable="d"
+        Title="MainWindow" 
+        Height="600" Width="920"
+        ResizeMode="NoResize"
+        Background="Transparent"
+        AllowsTransparency="True"
+        WindowStyle="None">
+
+    <Window.DataContext>
+        <viewModel:MainViewModel />
+    </Window.DataContext>
+    
+    <Border Background="#272537"
+            CornerRadius="20">
+        <Grid>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition  Height="75"/>
+                <RowDefinition />
+            </Grid.RowDefinitions>
+
+            <TextBlock Text="JPH"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Left"
+                       Foreground="White"
+                       FontSize="30"
+                       Margin="20,0,0,0"/>
+
+            <StackPanel Grid.Row="1">
+                
+                <RadioButton Content="Home"
+                             Style="{StaticResource SideBarButton}"
+                             IsChecked="True"
+                             Command="{Binding HomeViewCommand}"/>
+                
+                <RadioButton Content="Challenge 1"
+                             Style="{StaticResource SideBarButton}"
+                             Command="{Binding Challenge1ViewCommand}"/>
+
+                <RadioButton Content="Challenge 2"
+                             Style="{StaticResource SideBarButton}"/>
+
+                <RadioButton Content="Challenge 3"
+                             Style="{StaticResource SideBarButton}"/>
+
+                <RadioButton Content="Challenge 4"
+                             Style="{StaticResource SideBarButton}"/>
+
+                <RadioButton Content="Challenge 5"
+                             Style="{StaticResource SideBarButton}"/>
+
+            </StackPanel>
+
+            <ContentControl Grid.Row="1"
+                            Grid.Column="1"
+                            Margin="10"
+                            Content="{Binding CurrentView}"/>
+        </Grid>
+    </Border>
+</Window>
