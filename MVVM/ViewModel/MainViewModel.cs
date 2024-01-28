@@ -48,13 +48,5 @@ namespace ExactusCodeChallenge.MVVM.ViewModel
             });
         }
 
-        //public RelayCommand ChangeTab(ObservableObject ViewModel)
-        //{
-        //    return new RelayCommand(o =>
-        //    {
-        //        CurrentView = ViewModel;
-        //    });
-        //}
-
     }
 }
