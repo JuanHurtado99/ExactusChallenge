@@ -50,16 +50,20 @@
                              Command="{Binding Challenge1ViewCommand}"/>
 
                 <RadioButton Content="Challenge 2"
-                             Style="{StaticResource SideBarButton}"/>
+                             Style="{StaticResource SideBarButton}"
+                             Command="{Binding Challenge2ViewCommand}"/>
 
                 <RadioButton Content="Challenge 3"
-                             Style="{StaticResource SideBarButton}"/>
+                             Style="{StaticResource SideBarButton}"
+                             Command="{Binding Challenge3ViewCommand}"/>
 
                 <RadioButton Content="Challenge 4"
-                             Style="{StaticResource SideBarButton}"/>
+                             Style="{StaticResource SideBarButton}"
+                             Command="{Binding Challenge4ViewCommand}"/>
 
                 <RadioButton Content="Challenge 5"
-                             Style="{StaticResource SideBarButton}"/>
+                             Style="{StaticResource SideBarButton}"
+                             Command="{Binding Challenge5ViewCommand}"/>
 
             </StackPanel>
 
