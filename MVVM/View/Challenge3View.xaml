@@ -10,5 +10,79 @@
 
         <TextBlock Text="Challenge3"
                     Style="{StaticResource TitleText}" />
+
+        <StackPanel Orientation="Horizontal">
+
+            <Border Width="600"
+           Height="150"
+           Style="{StaticResource Challenge3Card}">
+
+                <Border.Clip>
+                    <RectangleGeometry RadiusX="10"
+                  RadiusY="10"
+                  Rect="0,0,600,150"/>
+                </Border.Clip>
+
+
+                <StackPanel>
+                    <TextBlock FontSize="14"
+           Margin="20,10,10,10">
+              
+                        
+                        Me, like most people, schedule my days into 5 second chunks. But my manager always gives
+                        <LineBreak />
+                        me projects that take hours. Build me a subroutine to help with my schedule, given a time in
+                        <LineBreak />                        hours and minutes, convert to multiples of 5 seconds.
+                                                          
+
+                    </TextBlock>
+                </StackPanel>
+
+            </Border>
+        </StackPanel>
+        <StackPanel Margin="10,10,0,0">
+            <TextBlock Text=" Use the Input Card to activate the Method, you see the result in chunks of 5 seconds on the Output card"/>
+        </StackPanel>
+
+        <DockPanel  Margin="0,10,0,0"  VerticalAlignment="Center">
+            <Border Width="250"
+           Height="200"
+           Style="{StaticResource Challenge3Card}"
+           HorizontalAlignment="Left"
+           Margin="10,0,0,0">
+
+                <Border.Clip>
+                    <RectangleGeometry RadiusX="10"
+                              RadiusY="10"
+                              Rect="0,0,250,200"/>
+                </Border.Clip>
+
+
+                <StackPanel>
+                    <TextBlock Text="Input" Margin="20,0,0,0" FontSize="18"/>
+                </StackPanel>
+
+            </Border>
+
+            <Border Width="250"
+           Height="200"
+           Style="{StaticResource Challenge3Card}"
+           HorizontalAlignment="Right"
+           Margin="0,0,40,0">
+
+                <Border.Clip>
+                    <RectangleGeometry RadiusX="10"
+              RadiusY="10"
+              Rect="0,0,250,200"/>
+                </Border.Clip>
+
+
+                <StackPanel>
+                    <TextBlock Text="Output" Margin="20,0,0,0" FontSize="18"/>
+                </StackPanel>
+
+            </Border>
+        </DockPanel>
+
     </StackPanel>
 </UserControl>

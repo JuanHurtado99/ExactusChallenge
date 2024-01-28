@@ -11,5 +11,76 @@
 
         <TextBlock Text="Challenge2"
                        Style="{StaticResource TitleText}" />
+        <StackPanel Orientation="Horizontal">
+
+            <Border Width="600"
+                 Height="150"
+                 Style="{StaticResource Challenge2Card}">
+
+                <Border.Clip>
+                    <RectangleGeometry RadiusX="10"
+                        RadiusY="10"
+                        Rect="0,0,600,150"/>
+                </Border.Clip>
+
+
+                <StackPanel>
+                    <TextBlock FontSize="14"
+                 Margin="20,10,10,10">
+                    
+                        We have been mailed 2 letters that look like they might be the same letter, but we can not 
+                           <LineBreak />
+                        be sure without looking at them. But who has time for that? Create a function that when 
+                        <LineBreak />
+                        given 2 strings it will return a percentage of similarity
+                    </TextBlock>
+                </StackPanel>
+
+            </Border>
+        </StackPanel>
+        <StackPanel Margin="10,10,0,0">
+            <TextBlock Text=" Use the Input Card to activate the Method, you see the percentage of similarity on the Output Card"/>
+        </StackPanel>
+
+        <DockPanel  Margin="0,10,0,0"  VerticalAlignment="Center">
+            <Border Width="250"
+                 Height="200"
+                 Style="{StaticResource Challenge2Card}"
+                 HorizontalAlignment="Left"
+                 Margin="10,0,0,0">
+
+                <Border.Clip>
+                    <RectangleGeometry RadiusX="10"
+                                    RadiusY="10"
+                                    Rect="0,0,250,200"/>
+                </Border.Clip>
+
+
+                <StackPanel>
+                    <TextBlock Text="Input" Margin="20,0,0,0" FontSize="18"/>
+                </StackPanel>
+
+            </Border>
+
+            <Border Width="250"
+                 Height="200"
+                 Style="{StaticResource Challenge2Card}"
+                 HorizontalAlignment="Right"
+                 Margin="0,0,40,0">
+
+                <Border.Clip>
+                    <RectangleGeometry RadiusX="10"
+                    RadiusY="10"
+                    Rect="0,0,250,200"/>
+                </Border.Clip>
+
+
+                <StackPanel>
+                    <TextBlock Text="Output" Margin="20,0,0,0" FontSize="18"/>
+                </StackPanel>
+
+            </Border>
+        </DockPanel>
+
     </StackPanel>
 </UserControl>
