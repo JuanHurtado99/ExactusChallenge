@@ -4,10 +4,16 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ExactusCodeChallenge.MVVM.View"
+             xmlns:viewModel="clr-namespace:ExactusCodeChallenge.MVVM.ViewModel"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <StackPanel >
 
+    <UserControl.DataContext>
+        <viewModel:Challenge5ViewModel />
+    </UserControl.DataContext>
+    
+    <StackPanel >
+        
         <TextBlock Text="Challenge5"
                     Style="{StaticResource TitleText}" />
 
@@ -78,6 +84,10 @@
 
                 <StackPanel>
                     <TextBlock Text="Output" Margin="20,0,0,0" FontSize="18"/>
+
+                    <TextBlock Text="{Binding friendsString}"
+                               Margin="20,0,0,0"
+                               FontSize="16"/>
                 </StackPanel>
 
             </Border>
