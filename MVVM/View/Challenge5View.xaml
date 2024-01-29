@@ -20,8 +20,8 @@
         <StackPanel Orientation="Horizontal">
 
             <Border Width="600"
-         Height="150"
-         Style="{StaticResource Challenge5Card}">
+                 Height="100"
+                 Style="{StaticResource Challenge5Card}">   
 
                 <Border.Clip>
                     <RectangleGeometry RadiusX="10"
@@ -51,7 +51,7 @@
 
         <DockPanel  Margin="0,10,0,0"  VerticalAlignment="Center">
             <Border Width="250"
-         Height="200"
+         Height="300"
          Style="{StaticResource Challenge5Card}"
          HorizontalAlignment="Left"
          Margin="10,0,0,0">
@@ -59,12 +59,41 @@
                 <Border.Clip>
                     <RectangleGeometry RadiusX="10"
                             RadiusY="10"
-                            Rect="0,0,250,200"/>
+                            Rect="0,0,250,275"/>
                 </Border.Clip>
 
 
                 <StackPanel>
                     <TextBlock Text="Input" Margin="20,0,0,0" FontSize="18"/>
+
+                    <StackPanel Margin="0,10,0,0">
+                        <TextBlock Margin="5,0,0,5" FontSize="13">
+                            Type your current X and Y coordinate
+                            <LineBreak />
+                            (only int numbers please and in order)
+                        </TextBlock>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBox Tag="X" Margin="10,0,0,0" Width="100" Text=""/>
+                            <TextBox Tag="Y" Margin="10,0,0,0" Width="100"/>
+                        </StackPanel>
+
+                    </StackPanel>
+
+                    <StackPanel Margin="0,10,0,0">
+                        <TextBlock Margin="10,0,0,5" FontSize="13">
+                             Type the X and Y coordinate for your
+                             <LineBreak />
+                             friend then press the button to add to 
+                             <LineBreak />
+                              the list
+                             (same rules as above)
+                        </TextBlock>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBox Tag="X" Margin="10,0,0,0" Width="100" Text=""/>
+                            <TextBox Tag="Y" Margin="10,0,0,0" Width="100"/>
+                        </StackPanel>
+                        <Button Margin="50,20,0,0" HorizontalAlignment="Left">Add to List</Button>
+                    </StackPanel>
                 </StackPanel>
 
             </Border>
