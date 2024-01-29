@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 using ExactusCodeChallenge.Core;
 using ExactusCodeChallenge.Subroutines;
 
@@ -83,20 +84,32 @@ namespace ExactusCodeChallenge.MVVM.ViewModel
                 OnPropertyChanged();
             }
         }
+
+        public RelayCommand AddToListCommand { get; set; }
+        public RelayCommand UdpateStartingPositionCommand { get; set; }
         public Challenge5ViewModel()
         {
-
-            _xStartingPoint = 0;
-            _yStartingPoint = 0;
+            xFriendPoint = new int();
+            _xStartingPoint = new int();
+            _yStartingPoint = new int();
 
             _startingPoint = new int[2];
 
             _friendsLocations = new List<int[]>();
 
-            int[][] friendsLocations = [[10,20],[20,20],[10,10],[100,10]];
             _friendsNavigation = new FriendsNavigation();
             //_friendsSorted = _friendsNavigation.sortFriendsLocation(_startingPoint, friendsLocations);
             _friendsString = "No friend has been added";
+
+            AddToListCommand = new RelayCommand(o =>
+            {
+                AddToList();
+            });
+
+            UdpateStartingPositionCommand = new RelayCommand(o =>
+            {
+                UdpateStartingPosition();
+            });
             
         }
 
@@ -111,12 +124,31 @@ namespace ExactusCodeChallenge.MVVM.ViewModel
             return result;
         }
 
-        public void AddToList()
+        private void AddToList()
         {
             _friendsLocations.Add([_xFriendPoint, yFriendPoint]);
+            CallSortList();
+        }
 
+        private void UdpateStartingPosition()
+        {
+            _startingPoint = [_xStartingPoint, _yStartingPoint];
+            if(_friendsString != "No friend has been added") 
+            { 
+                CallSortList();
+            }
+        }
+
+        private void CallSortList()
+        {
             _friendsSorted = _friendsNavigation.sortFriendsLocation(_startingPoint, _friendsLocations);
             _friendsString = friendsResultToString();
+            friendsString = _friendsString;
+        }
+
+        private void myValidation()
+        {
+            //Validation.GetErrors([this]);
         }
     }
 }

@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:ExactusCodeChallenge.MVVM.View"
              xmlns:viewModel="clr-namespace:ExactusCodeChallenge.MVVM.ViewModel"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="550" d:DesignWidth="800">
 
     <UserControl.DataContext>
         <viewModel:Challenge5ViewModel />
@@ -51,15 +51,15 @@
 
         <DockPanel  Margin="0,10,0,0"  VerticalAlignment="Center">
             <Border Width="250"
-         Height="300"
-         Style="{StaticResource Challenge5Card}"
-         HorizontalAlignment="Left"
-         Margin="10,0,0,0">
+                    Height="350"
+                    Style="{StaticResource Challenge5Card}"
+                    HorizontalAlignment="Left"
+                    Margin="10,0,0,0"> 
 
                 <Border.Clip>
                     <RectangleGeometry RadiusX="10"
                             RadiusY="10"
-                            Rect="0,0,250,275"/>
+                            Rect="0,0,250,350"/>
                 </Border.Clip>
 
 
@@ -70,13 +70,15 @@
                         <TextBlock Margin="5,0,0,5" FontSize="13">
                             Type your current X and Y coordinate
                             <LineBreak />
+                             Press the button if to submit
+                            <LineBreak />
                             (only int numbers please and in order)
                         </TextBlock>
                         <StackPanel Orientation="Horizontal">
-                            <TextBox Tag="X" Margin="10,0,0,0" Width="100" Text=""/>
-                            <TextBox Tag="Y" Margin="10,0,0,0" Width="100"/>
+                            <TextBox Tag="X" Margin="10,0,0,0" Width="100" Text="{Binding xStartingPoint, UpdateSourceTrigger=PropertyChanged}"/>
+                            <TextBox Tag="Y" Margin="10,0,0,0" Width="100" Text="{Binding yStartingPoint, UpdateSourceTrigger=PropertyChanged}"/>
                         </StackPanel>
-
+                        <Button Margin="50,10,0,0" HorizontalAlignment="Left" Command="{Binding UdpateStartingPositionCommand}">Update Starting Point</Button>
                     </StackPanel>
 
                     <StackPanel Margin="0,10,0,0">
@@ -89,10 +91,10 @@
                              (same rules as above)
                         </TextBlock>
                         <StackPanel Orientation="Horizontal">
-                            <TextBox Tag="X" Margin="10,0,0,0" Width="100" Text=""/>
-                            <TextBox Tag="Y" Margin="10,0,0,0" Width="100"/>
+                            <TextBox Tag="X" Margin="10,0,0,0" Width="100" Text="{Binding xFriendPoint, UpdateSourceTrigger=PropertyChanged}"/>
+                            <TextBox Tag="Y" Margin="10,0,0,0" Width="100" Text="{Binding yFriendPoint, UpdateSourceTrigger=PropertyChanged}"/>
                         </StackPanel>
-                        <Button Margin="50,20,0,0" HorizontalAlignment="Left">Add to List</Button>
+                        <Button Margin="50,20,0,0" HorizontalAlignment="Left" Command="{Binding AddToListCommand}">Add to List</Button>
                     </StackPanel>
                 </StackPanel>
 
@@ -114,7 +116,7 @@
                 <StackPanel>
                     <TextBlock Text="Output" Margin="20,0,0,0" FontSize="18"/>
 
-                    <TextBlock Text="{Binding friendsString}"
+                    <TextBlock Text="{Binding friendsString, UpdateSourceTrigger=PropertyChanged}"
                                Margin="20,0,0,0"
                                FontSize="16"/>
                 </StackPanel>

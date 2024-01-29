@@ -27,7 +27,7 @@
             </Grid.ColumnDefinitions>
 
             <Grid.RowDefinitions>
-                <RowDefinition  Height="75"/>
+                <RowDefinition  Height="50"/>
                 <RowDefinition />
             </Grid.RowDefinitions>
 
@@ -38,7 +38,7 @@
                        FontSize="30"
                        Margin="20,0,0,0"/>
 
-            <StackPanel Grid.Row="1">
+            <StackPanel Grid.Row="1" Margin="0,20,0,0">
                 
                 <RadioButton Content="Home"
                              Style="{StaticResource SideBarButton}"
