@@ -116,9 +116,10 @@
                 <StackPanel>
                     <TextBlock Text="Output" Margin="20,0,0,0" FontSize="18"/>
 
+                    <Button Command="{Binding ClearOutputCommand}"> Clear output</Button>
                     <TextBlock Text="{Binding friendsString, UpdateSourceTrigger=PropertyChanged}"
-                               Margin="20,0,0,0"
-                               FontSize="16"/>
+                                Margin="20,0,0,0"
+                                FontSize="16"/>
                 </StackPanel>
 
             </Border>

@@ -84,9 +84,10 @@ namespace ExactusCodeChallenge.MVVM.ViewModel
                 OnPropertyChanged();
             }
         }
-
         public RelayCommand AddToListCommand { get; set; }
         public RelayCommand UdpateStartingPositionCommand { get; set; }
+        public RelayCommand ClearOutputCommand { get; set; }
+
         public Challenge5ViewModel()
         {
             xFriendPoint = new int();
@@ -98,9 +99,13 @@ namespace ExactusCodeChallenge.MVVM.ViewModel
             _friendsLocations = new List<int[]>();
 
             _friendsNavigation = new FriendsNavigation();
-            //_friendsSorted = _friendsNavigation.sortFriendsLocation(_startingPoint, friendsLocations);
-            _friendsString = "No friend has been added";
+            friendsString = "No friend has been added";
 
+            setCommands();
+        }
+
+        private void setCommands()
+        {
             AddToListCommand = new RelayCommand(o =>
             {
                 AddToList();
@@ -110,9 +115,12 @@ namespace ExactusCodeChallenge.MVVM.ViewModel
             {
                 UdpateStartingPosition();
             });
-            
-        }
 
+            ClearOutputCommand = new RelayCommand(o =>
+            {
+                ClearOutput();
+            });
+        }
         private string friendsResultToString()
         {
             var result = "";
@@ -126,29 +134,39 @@ namespace ExactusCodeChallenge.MVVM.ViewModel
 
         private void AddToList()
         {
-            _friendsLocations.Add([_xFriendPoint, yFriendPoint]);
-            CallSortList();
+
+                _friendsLocations.Add([_xFriendPoint, yFriendPoint]);
+                CallSortList();
         }
 
         private void UdpateStartingPosition()
         {
-            _startingPoint = [_xStartingPoint, _yStartingPoint];
-            if(_friendsString != "No friend has been added") 
-            { 
-                CallSortList();
+                _startingPoint = [_xStartingPoint, _yStartingPoint];
+
+                if(_friendsString != "No friend has been added") 
+                { 
+                    CallSortList();
+                }
+        }
+
+        private void ClearOutput()
+        {
+            friendsString = "Output cleared :)";
+            _friendsLocations.Clear();
+
+
+        }
+        private void CallSortList()
+        {
+            try
+            {
+                _friendsSorted = _friendsNavigation.sortFriendsLocation(_startingPoint, _friendsLocations);
+                friendsString = friendsResultToString();
+            } catch (Exception ex)
+            {
+                friendsString = "Ups something whent wrong check your input";
             }
         }
 
-        private void CallSortList()
-        {
-            _friendsSorted = _friendsNavigation.sortFriendsLocation(_startingPoint, _friendsLocations);
-            _friendsString = friendsResultToString();
-            friendsString = _friendsString;
-        }
-
-        private void myValidation()
-        {
-            //Validation.GetErrors([this]);
-        }
     }
 }
