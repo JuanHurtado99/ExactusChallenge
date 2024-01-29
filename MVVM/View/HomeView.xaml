@@ -55,34 +55,29 @@
 
             <StackPanel Orientation="Horizontal">
 
-                <Border Background="#844eff"
-                        Style="{StaticResource Challenge1Card}">
+                <Border Style="{StaticResource Challenge1Card}">
                     <StackPanel >
                         <TextBlock Text="Challenge 1" />
                     </StackPanel>
                 </Border>
 
-                <Border Style="{StaticResource SmallBorderBox}"
-                        Background="#ffc554">
+                <Border Style="{StaticResource Challenge2Card}">
                     <StackPanel >
                         <TextBlock Text="Challenge 2" />
                     </StackPanel>
                 </Border>
 
-                <Border Style="{StaticResource SmallBorderBox}"
-                        Background="#4e99ff">
+                <Border Style="{StaticResource Challenge3Card}">
                     <StackPanel >
                         <TextBlock Text="Challenge 3" />
                     </StackPanel>
                 </Border>
-                <Border Style="{StaticResource SmallBorderBox}"
-                        Background="#294B29">
+                <Border Style="{StaticResource Challenge4Card}">
                     <StackPanel >
                         <TextBlock Text="Challenge 4" />
                     </StackPanel>
                 </Border>
-                <Border Style="{StaticResource SmallBorderBox}"
-                        Background="#6D2932">
+                <Border Style="{StaticResource Challenge5Card}">
                     <StackPanel >
                         <TextBlock Text="Challenge 5" />
                     </StackPanel>

@@ -14,5 +14,29 @@
            BasedOn="{StaticResource SmallBorderBox}">
         <Setter Property="Background" Value="#844eff" />
     </Style>
-    
+
+    <Style TargetType="{x:Type Border}" 
+        x:Key="Challenge2Card"
+        BasedOn="{StaticResource SmallBorderBox}">
+        <Setter Property="Background" Value="#ffc554" />
+    </Style>
+
+
+    <Style TargetType="{x:Type Border}" 
+        x:Key="Challenge3Card"
+        BasedOn="{StaticResource SmallBorderBox}">
+        <Setter Property="Background" Value="#4e99ff" />
+    </Style>
+
+    <Style TargetType="{x:Type Border}" 
+           x:Key="Challenge4Card"
+           BasedOn="{StaticResource SmallBorderBox}">
+        <Setter Property="Background" Value="#294B29" />
+    </Style>
+
+    <Style TargetType="{x:Type Border}" 
+           x:Key="Challenge5Card"
+           BasedOn="{StaticResource SmallBorderBox}">
+        <Setter Property="Background" Value="#6D2932" />
+    </Style>
 </ResourceDictionary>

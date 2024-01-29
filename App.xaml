@@ -11,6 +11,9 @@
                 <ResourceDictionary Source="Theme/SideBarButton.xaml"/>
                 <ResourceDictionary Source="Theme/BorderTheme.xaml" />
                 <ResourceDictionary Source="Theme/TextTheme.xaml" />
+                <ResourceDictionary Source="Theme/TextBoxTheme.xaml" />
+                <ResourceDictionary Source="Theme/ButtonTheme.xaml" />
+
             </ResourceDictionary.MergedDictionaries>
 
             <DataTemplate DataType="{x:Type viewModel:HomeViewModel}">
@@ -20,6 +23,23 @@
             <DataTemplate DataType="{x:Type viewModel:Challenge1ViewModel}">
                 <view:Challenge1View />
             </DataTemplate>
+            
+            <DataTemplate DataType="{x:Type viewModel:Challenge2ViewModel}">
+                <view:Challenge2View />
+            </DataTemplate>
+            
+            <DataTemplate DataType="{x:Type viewModel:Challenge3ViewModel}">
+                <view:Challenge3View />
+            </DataTemplate>
+            
+            <DataTemplate DataType="{x:Type viewModel:Challenge4ViewModel}">
+                <view:Challenge4View />
+            </DataTemplate>
+            
+            <DataTemplate DataType="{x:Type viewModel:Challenge5ViewModel}">
+                <view:Challenge5View />
+            </DataTemplate>
+            
         </ResourceDictionary>
     </Application.Resources>
 </Application>

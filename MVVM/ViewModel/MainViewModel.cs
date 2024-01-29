@@ -17,9 +17,18 @@ namespace ExactusCodeChallenge.MVVM.ViewModel
         public HomeViewModel HomeVM { get; set; }
 
         public Challenge1ViewModel Challenge1VM { get; set; }
-        
+        public Challenge2ViewModel Challenge2VM { get; set; }
+        public Challenge3ViewModel Challenge3VM { get; set; }
+        public Challenge4ViewModel Challenge4VM { get; set; }
+        public Challenge5ViewModel Challenge5VM { get; set; }
+
         public RelayCommand HomeViewCommand { get; set; }
         public RelayCommand Challenge1ViewCommand { get; set; }
+        public RelayCommand Challenge2ViewCommand { get; set; }
+        public RelayCommand Challenge3ViewCommand { get; set; }
+        public RelayCommand Challenge4ViewCommand { get; set; }
+        public RelayCommand Challenge5ViewCommand { get; set; }
+
 
         public object CurrentView
         {
@@ -34,9 +43,18 @@ namespace ExactusCodeChallenge.MVVM.ViewModel
         {
             HomeVM = new HomeViewModel();
             Challenge1VM = new Challenge1ViewModel();
-            
+            Challenge2VM = new Challenge2ViewModel();
+            Challenge3VM = new Challenge3ViewModel();
+            Challenge4VM = new Challenge4ViewModel();
+            Challenge5VM = new Challenge5ViewModel();
+
             CurrentView = HomeVM;
 
+            setRelayCommands();
+        }
+
+        private void setRelayCommands()
+        {
             HomeViewCommand = new RelayCommand(o =>
             {
                 CurrentView = HomeVM;
@@ -46,15 +64,27 @@ namespace ExactusCodeChallenge.MVVM.ViewModel
             {
                 CurrentView = Challenge1VM;
             });
-        }
 
-        //public RelayCommand ChangeTab(ObservableObject ViewModel)
-        //{
-        //    return new RelayCommand(o =>
-        //    {
-        //        CurrentView = ViewModel;
-        //    });
-        //}
+            Challenge2ViewCommand = new RelayCommand(o =>
+            {
+                CurrentView = Challenge2VM;
+            });
+
+            Challenge3ViewCommand = new RelayCommand(o =>
+            {
+                CurrentView = Challenge3VM;
+            });
+
+            Challenge4ViewCommand = new RelayCommand(o =>
+            {
+                CurrentView = Challenge4VM;
+            });
+
+            Challenge5ViewCommand = new RelayCommand(o =>
+            {
+                CurrentView = Challenge5VM;
+            });
+        }
 
     }
 }

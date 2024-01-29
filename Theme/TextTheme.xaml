@@ -7,7 +7,9 @@
 
     <Style TargetType="TextBlock" x:Key="TitleText" BasedOn="{StaticResource {x:Type TextBlock}}">
         <Setter Property="FontSize" Value="28"/>
-       
+        <Setter Property="Margin" Value="10,0,20,0" />
+        <!--HorizontalAlignment="Left"-->
+        <Setter Property="HorizontalAlignment" Value="Left" />
     </Style>
     
 </ResourceDictionary>
