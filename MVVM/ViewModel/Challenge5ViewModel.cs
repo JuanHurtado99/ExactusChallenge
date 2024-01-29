@@ -14,6 +14,63 @@ namespace ExactusCodeChallenge.MVVM.ViewModel
 
         private List<int[]> _friendsSorted;
         private string _friendsString;
+        private List<int[]> _friendsLocations;
+        private int _xStartingPoint;
+        private int _yStartingPoint;
+        private int _xFriendPoint;
+        private int _yFriendPoint;
+        private int[] _startingPoint;
+        public int xStartingPoint
+        {
+            get
+            {
+                return _xStartingPoint;
+            }
+            set
+            {
+                _xStartingPoint = value;
+                _startingPoint[0] = _xStartingPoint;
+                OnPropertyChanged();
+            }
+        }
+        public int yStartingPoint
+        {
+            get
+            {
+                return _yStartingPoint;
+            }
+            set
+            {
+                _yStartingPoint = value;
+                _startingPoint[1] = _yStartingPoint;
+                OnPropertyChanged();
+            }
+
+        }
+        public int xFriendPoint
+        {
+            get
+            {
+                return _xFriendPoint;
+            }
+            set
+            {
+                _xFriendPoint = value;
+                OnPropertyChanged();
+            }
+        }
+        public int yFriendPoint
+        {
+            get
+            {
+                return _yFriendPoint;
+            }
+            set
+            {
+                _yFriendPoint = value;
+                OnPropertyChanged();
+            }
+        }
         public string friendsString
         {
             get 
@@ -28,11 +85,18 @@ namespace ExactusCodeChallenge.MVVM.ViewModel
         }
         public Challenge5ViewModel()
         {
-            int[] startingPoint = [10,15];
+
+            _xStartingPoint = 0;
+            _yStartingPoint = 0;
+
+            _startingPoint = new int[2];
+
+            _friendsLocations = new List<int[]>();
+
             int[][] friendsLocations = [[10,20],[20,20],[10,10],[100,10]];
             _friendsNavigation = new FriendsNavigation();
-            _friendsSorted = _friendsNavigation.sortFriendsLocation(startingPoint, friendsLocations);
-            _friendsString = friendsResultToString();
+            //_friendsSorted = _friendsNavigation.sortFriendsLocation(_startingPoint, friendsLocations);
+            _friendsString = "No friend has been added";
             
         }
 
@@ -45,6 +109,14 @@ namespace ExactusCodeChallenge.MVVM.ViewModel
                 result += friendString;
             }
             return result;
+        }
+
+        public void AddToList()
+        {
+            _friendsLocations.Add([_xFriendPoint, yFriendPoint]);
+
+            _friendsSorted = _friendsNavigation.sortFriendsLocation(_startingPoint, _friendsLocations);
+            _friendsString = friendsResultToString();
         }
     }
 }

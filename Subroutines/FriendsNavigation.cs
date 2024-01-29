@@ -10,7 +10,7 @@ namespace ExactusCodeChallenge.Subroutines
     {
         public FriendsNavigation() { }
 
-        public List<int[]> sortFriendsLocation(int[] startingPoint, int[][] friendsLocations)
+        public List<int[]> sortFriendsLocation(int[] startingPoint, List<int[]> friendsLocations)
         {
             List<int[]> result = new List<int[]>();
 
@@ -20,7 +20,7 @@ namespace ExactusCodeChallenge.Subroutines
             List<FriendsDistance> Distances = new List<FriendsDistance>();
 
 
-            for (int i = 0; i < friendsLocations.Length; i++)
+            for (int i = 0; i < friendsLocations.Count; i++)
             {
                 var distance = Math.Sqrt(Math.Pow(startingX - friendsLocations[i][0], 2) + Math.Pow(startingY - friendsLocations[i][1], 2));
                 Distances.Add(new FriendsDistance(i, distance));
