@@ -8,5 +8,11 @@ namespace ExactusCodeChallenge.Subroutines
 {
     class RubickCubeBuilder
     {
+        public RubickCubeBuilder() { }
+
+        public int StickerCalculator(int side)
+        {
+            return (side * side) * 6;
+        }
     }
 }
