@@ -50,7 +50,7 @@
                        Margin="10,10,10,10">
                 Code Challenges - Select any challenge that you want to see first
                 <LineBreak />
-                Feel free to start in any order you want :)
+                Feel free to start in any order you want :) (for navigation use the sidebar)
             </TextBlock>
 
             <StackPanel Orientation="Horizontal">
@@ -58,28 +58,47 @@
                 <Border Style="{StaticResource Challenge1Card}">
                     <StackPanel >
                         <TextBlock Text="Challenge 1" />
+                        <StackPanel Margin="5,10,0,0">
+                            <TextBlock>
+                                RandomGift generator
+                            </TextBlock>
+                        </StackPanel>
                     </StackPanel>
                 </Border>
 
                 <Border Style="{StaticResource Challenge2Card}">
                     <StackPanel >
                         <TextBlock Text="Challenge 2" />
+                        <StackPanel Margin="5,10,0,0">
+                            <TextBlock >
+                                Are this the Same?? 
+                            </TextBlock>
+                        </StackPanel>
                     </StackPanel>
                 </Border>
 
                 <Border Style="{StaticResource Challenge3Card}">
-                    <StackPanel >
+                    <StackPanel Margin="5,0,0,0">
                         <TextBlock Text="Challenge 3" />
+                        <StackPanel Margin="5,10,0,0">
+                            <TextBlock>5 second chuncks</TextBlock>
+                        </StackPanel>
                     </StackPanel>
                 </Border>
                 <Border Style="{StaticResource Challenge4Card}">
                     <StackPanel >
                         <TextBlock Text="Challenge 4" />
+                        <StackPanel Margin="5,10,0,0">
+                            <TextBlock>RubickCube generator</TextBlock>
+                        </StackPanel>
                     </StackPanel>
                 </Border>
                 <Border Style="{StaticResource Challenge5Card}">
                     <StackPanel >
                         <TextBlock Text="Challenge 5" />
+                        <StackPanel Margin="5,10,0,0">
+                            <TextBlock>Where are my friends?</TextBlock>
+                        </StackPanel>
                     </StackPanel>
                 </Border>
             </StackPanel>

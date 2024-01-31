@@ -14,13 +14,13 @@
         <StackPanel Orientation="Horizontal">
 
             <Border Width="600"
-           Height="150"
+           Height="100"
            Style="{StaticResource Challenge3Card}">
 
                 <Border.Clip>
                     <RectangleGeometry RadiusX="10"
                   RadiusY="10"
-                  Rect="0,0,600,150"/>
+                  Rect="0,0,600,100"/>
                 </Border.Clip>
 
 
@@ -60,6 +60,15 @@
 
                 <StackPanel>
                     <TextBlock Text="Input" Margin="20,0,0,0" FontSize="18"/>
+                    <StackPanel Margin="10,0,20,0">
+                        <TextBlock  >
+                            Add the time in the textbox, 
+                            <LineBreak />
+                            use a format like 1h33m
+                        </TextBlock>
+                        <TextBox Width="175" Margin="0,20,0,0" Text="{Binding Time, UpdateSourceTrigger=PropertyChanged}"/>
+                        <Button Margin="0,20,0,0" Command="{Binding SubmitCommand}"> Submit </Button>
+                    </StackPanel>
                 </StackPanel>
 
             </Border>
@@ -79,6 +88,10 @@
 
                 <StackPanel>
                     <TextBlock Text="Output" Margin="20,0,0,0" FontSize="18"/>
+
+                    <StackPanel Margin="10,10,0,0">
+                        <TextBlock Text="{Binding OutputString, UpdateSourceTrigger=PropertyChanged}" />
+                    </StackPanel>
                 </StackPanel>
 
             </Border>

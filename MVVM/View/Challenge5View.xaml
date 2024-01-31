@@ -101,15 +101,15 @@
             </Border>
 
             <Border Width="250"
-         Height="200"
-         Style="{StaticResource Challenge5Card}"
-         HorizontalAlignment="Right"
-         Margin="0,0,40,0">
+                 Height="350"
+                 Style="{StaticResource Challenge5Card}"
+                 HorizontalAlignment="Right"
+                 Margin="0,0,40,0"> 
 
                 <Border.Clip>
                     <RectangleGeometry RadiusX="10"
-            RadiusY="10"
-            Rect="0,0,250,200"/>
+                                        RadiusY="10"
+                                        Rect="0,0,250,350"/>
                 </Border.Clip>
 
 

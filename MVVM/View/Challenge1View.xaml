@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ExactusCodeChallenge.MVVM.View"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="500" d:DesignWidth="800">
     <StackPanel>
         <TextBlock Text="Problem 1" 
              Style="{StaticResource TitleText}"
@@ -14,7 +14,7 @@
         <StackPanel Orientation="Horizontal">
 
             <Border Width="600"
-                        Height="150"
+                        Height="125"
                         Style="{StaticResource Challenge1Card}">
 
                 <Border.Clip>
@@ -46,12 +46,12 @@
             <TextBlock Text=" Use the Input Card to activate the Method, you will recieve your birthday gift on the Output Card"/>
         </StackPanel>
 
-        <DockPanel  Margin="0,10,0,0"  VerticalAlignment="Center">
+        <DockPanel  Margin="0,10,0,0"  VerticalAlignment="Top">
             <Border Width="250"
                         Height="200"
                         Style="{StaticResource Challenge1Card}"
                         HorizontalAlignment="Left"
-                        Margin="10,0,0,0">
+                        Margin="10,0,0,100">
 
                 <Border.Clip>
                     <RectangleGeometry RadiusX="10"
@@ -62,12 +62,16 @@
 
                 <StackPanel>
                     <TextBlock Text="Input" Margin="20,0,0,0" FontSize="18"/>
+                    <StackPanel Margin="10,20,0,0">
+                        <TextBlock Text="Press the button to get your birthday gift" />
+                        <Button Margin="0,20,0,0" Command="{ Binding SubmitCommand }"> Receive Gift :)</Button>
+                    </StackPanel>
                 </StackPanel>
 
             </Border>
 
             <Border Width="250"
-                        Height="200"
+                        Height="300"
                         Style="{StaticResource Challenge1Card}"
                         HorizontalAlignment="Right"
                         Margin="0,0,40,0">
@@ -75,12 +79,17 @@
                 <Border.Clip>
                     <RectangleGeometry RadiusX="10"
                            RadiusY="10"
-                           Rect="0,0,250,200"/>
+                           Rect="0,0,250,300"/>
                 </Border.Clip>
 
 
                 <StackPanel>
                     <TextBlock Text="Output" Margin="20,0,0,0" FontSize="18"/>
+                    <StackPanel Margin="10,20,0,0">
+                        <TextBlock Text="{Binding ResultUnique , UpdateSourceTrigger=PropertyChanged}"/>
+                        <Button Margin="0,0,0,10" Command="{Binding ClearCommand}">Clear </Button>
+                        <TextBlock Margin="10,0,0,0" Text="{Binding resultList, UpdateSourceTrigger=PropertyChanged}" />
+                    </StackPanel>
                 </StackPanel>
 
             </Border>
