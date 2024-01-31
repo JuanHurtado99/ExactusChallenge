@@ -143,7 +143,7 @@ namespace ExactusCodeChallenge.MVVM.ViewModel
         {
                 _startingPoint = [_xStartingPoint, _yStartingPoint];
 
-                if(_friendsString != "No friend has been added") 
+                if(_friendsString != "No friend has been added" && _friendsString != "Output cleared :)") 
                 { 
                     CallSortList();
                 }

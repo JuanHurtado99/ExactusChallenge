@@ -2,25 +2,29 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace ExactusCodeChallenge.Subroutines
 {
     class FiveSecondsOfWork
     {
+
+        private Regex _rgHours = new Regex("\\d+?(?=h)");
+        private Regex _rgMinutes = new Regex("\\d+?(?=m)");
+
         public FiveSecondsOfWork() { }
 
-        public int ConvertTimeToSeconds(int minutes, int hours)
+        public int ConvertTimeToSeconds(string time)
         {
-            var minutesToSeconds = ConvertMinutesToSeconds(minutes);
-            var hoursToSeconds = ConvertHoursToSeconds(hours);
 
-            var result = minutesToSeconds + hoursToSeconds;
+            string minutes = _rgMinutes.Match(time).ToString();
+            string hours = _rgHours.Match(time).ToString();
 
-            if (result % 5 != 0)
-            {
-                result = 5 * (int)Math.Round(result / 5.0);
-            }
+            var minutesToSeconds = ConvertMinutesToSeconds(Int32.Parse(minutes));
+            var hoursToSeconds = ConvertHoursToSeconds(Int32.Parse(hours));
+
+            var result = (minutesToSeconds + hoursToSeconds) / 5;
 
             return result;
         }
