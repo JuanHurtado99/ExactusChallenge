@@ -35,7 +35,7 @@ namespace ExactusCodeTest.Subroutines
             
             var string1 = "The red dog runs fast.";
             var string2 = "The blue dog ran fast";
-            Assert.Equal(40, areTheyTheSameLetters.calculateSimilarity(string1, string2));
+            Assert.Equal(68, areTheyTheSameLetters.calculateSimilarity(string1, string2));
         }
 
         [Fact]
@@ -44,7 +44,7 @@ namespace ExactusCodeTest.Subroutines
 
             var string1 = "The grass is always greener";
             var string2 = "the gass is always greener";
-            Assert.Equal(22, areTheyTheSameLetters.calculateSimilarity(string1, string2));
+            Assert.Equal(93, areTheyTheSameLetters.calculateSimilarity(string1, string2));
         }
 
         [Fact]
@@ -54,6 +54,15 @@ namespace ExactusCodeTest.Subroutines
             var string1 = "There has to be a reason for this.";
             var string2 = "There has to be a reason for this.";
             Assert.Equal(100, areTheyTheSameLetters.calculateSimilarity(string1, string2));
+        }
+
+        [Fact]
+        public void testData4()
+        {
+
+            var string1 = "cat";
+            var string2 = "cap";
+            Assert.Equal(67, areTheyTheSameLetters.calculateSimilarity(string1, string2));
         }
     }
 }

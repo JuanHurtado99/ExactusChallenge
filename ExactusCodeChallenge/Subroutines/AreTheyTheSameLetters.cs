@@ -12,23 +12,48 @@ namespace ExactusCodeChallenge.Subroutines
 
         public int calculateSimilarity( string letter1, string letter2 ) 
         {
+            int n = letter1.Length;
+            int m = letter2.Length;
+            int[,] d = new int[n + 1, m + 1];
+            int maxLength = 0;
 
-            if(letter1.Length != letter2.Length)
+            if(letter1 == letter2)
             {
-                _ = letter1.Length > letter2.Length ? letter2 = letter2.PadRight(letter1.Length) : letter1 = letter1.PadRight(letter2.Length);
+                return 100;
             }
-            var letterArray1 = letter1.ToCharArray();
-            var letterArray2 = letter2.ToCharArray();
-            var sim = 0;
-            var dif = 0;
-            for (int i = 0; i < letterArray1.Length; i++)
+
+            if(letter1.Length == letter2.Length)
             {
-                if (letterArray1[i] == letterArray2[i])
+                maxLength = letter1.Length;
+
+            }
+            else if (letter1.Length > letter2.Length)
+            {
+                maxLength = letter1.Length;
+
+            }
+            else if(letter1.Length < letter2.Length)
+            {
+                maxLength = letter2.Length;
+
+            }
+
+            for (int i = 1; i <= letter1.Length; i++)
+            {
+                for (int j = 1; j <= letter2.Length; j++)
                 {
-                    sim++;
+ 
+                    int cost = (letter2[j - 1] == letter1[i - 1]) ? 0 : 1;
+
+                    d[i, j] = Math.Min(
+                        Math.Min(d[i - 1, j] + 1, d[i, j - 1] + 1),
+                        d[i - 1, j - 1] + cost);
                 }
             }
-            return ((sim + dif) *100)/ letterArray1.Length;
+
+            double sim = Math.Round((double)((maxLength - d[n, m]) / (double)maxLength) * 100);
+
+            return (int)sim;
         }
     }
 }
