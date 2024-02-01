@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ExactusCodeChallenge.Subroutines
 {
-    class RandomGift
+        public class RandomGift
     {
         private List<int> _gifts;
         public RandomGift() 

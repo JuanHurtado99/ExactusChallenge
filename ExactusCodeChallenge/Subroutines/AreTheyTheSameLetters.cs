@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ExactusCodeChallenge.Subroutines
 {
-    class AreTheyTheSameLetters
+    public class AreTheyTheSameLetters
     {
         public AreTheyTheSameLetters() { }
 

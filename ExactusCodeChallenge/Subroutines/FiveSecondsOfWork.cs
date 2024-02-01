@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ExactusCodeChallenge.Subroutines
 {
-    class FiveSecondsOfWork
+    public class FiveSecondsOfWork
     {
 
         private Regex _rgHours = new Regex("\\d+?(?=h)");
@@ -21,10 +21,25 @@ namespace ExactusCodeChallenge.Subroutines
             string minutes = _rgMinutes.Match(time).ToString();
             string hours = _rgHours.Match(time).ToString();
 
-            var minutesToSeconds = ConvertMinutesToSeconds(Int32.Parse(minutes));
-            var hoursToSeconds = ConvertHoursToSeconds(Int32.Parse(hours));
+            var result = 0;
+            if (String.IsNullOrEmpty(minutes))
+            {
+                result = (ConvertHoursToSeconds(Int32.Parse(hours))) / 5;
 
-            var result = (minutesToSeconds + hoursToSeconds) / 5;
+            }
+            else if (String.IsNullOrEmpty(hours))
+            {
+                result = (ConvertMinutesToSeconds(Int32.Parse(minutes))) / 5;
+
+            }
+            else
+            {
+
+                var minutesToSeconds = ConvertMinutesToSeconds(Int32.Parse(minutes));
+                var hoursToSeconds = ConvertHoursToSeconds(Int32.Parse(hours));
+                result = (minutesToSeconds + hoursToSeconds) / 5;
+
+            }
 
             return result;
         }

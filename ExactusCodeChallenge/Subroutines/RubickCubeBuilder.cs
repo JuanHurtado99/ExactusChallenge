@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ExactusCodeChallenge.Subroutines
 {
-    class RubickCubeBuilder
+    public class RubickCubeBuilder
     {
         public RubickCubeBuilder() { }
 
