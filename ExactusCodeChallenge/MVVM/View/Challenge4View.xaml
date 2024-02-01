@@ -42,7 +42,7 @@
             </Border>
         </StackPanel>
         <StackPanel Margin="10,10,0,0">
-            <TextBlock Text=" Use the Input Card to activate the Method, you see the Number of stickers that you will need on the Output Card"/>
+            <TextBlock Text=" Use the Input Card to activate the Method, you will see the Number of stickers that you need on the Output Card"/>
         </StackPanel>
 
         <DockPanel  Margin="0,10,0,0"  VerticalAlignment="Center">
