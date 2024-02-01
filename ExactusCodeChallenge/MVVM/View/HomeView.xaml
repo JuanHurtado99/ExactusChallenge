@@ -50,7 +50,7 @@
                        Margin="10,10,10,10">
                 Code Challenges - Select any challenge that you want to see first
                 <LineBreak />
-                Feel free to start in any order you want :) (for navigation use the sidebar)
+                Feel free to start in any order you want :), for navigation use the sidebar.
             </TextBlock>
 
             <StackPanel Orientation="Horizontal">
