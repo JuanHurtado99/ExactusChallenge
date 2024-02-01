@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34511.84
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExactusCodeChallenge", "ExactusCodeChallenge.csproj", "{D5C91E34-BCA3-4A8D-AFF2-68D6A2D5479B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExactusCodeChallenge", "ExactusCodeChallenge\ExactusCodeChallenge.csproj", "{D5C91E34-BCA3-4A8D-AFF2-68D6A2D5479B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExactusCodeTest", "ExactusCodeTest\ExactusCodeTest.csproj", "{15FFE291-B0CF-49F1-B5CB-D2CB1EA11289}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{D5C91E34-BCA3-4A8D-AFF2-68D6A2D5479B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D5C91E34-BCA3-4A8D-AFF2-68D6A2D5479B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D5C91E34-BCA3-4A8D-AFF2-68D6A2D5479B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15FFE291-B0CF-49F1-B5CB-D2CB1EA11289}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15FFE291-B0CF-49F1-B5CB-D2CB1EA11289}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15FFE291-B0CF-49F1-B5CB-D2CB1EA11289}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15FFE291-B0CF-49F1-B5CB-D2CB1EA11289}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
